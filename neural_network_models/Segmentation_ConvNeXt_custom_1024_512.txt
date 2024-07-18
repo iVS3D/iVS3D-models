@@ -1,0 +1,4 @@
+Building; 120,120,120;
+Road; 128,64,128;
+Vegetation; 60,142,35;
+Vehicle; 220,20,60;
