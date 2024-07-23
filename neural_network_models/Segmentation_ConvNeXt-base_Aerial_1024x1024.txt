@@ -2,3 +2,5 @@ Building; 120,120,120;
 Road; 128,64,128;
 Vegetation; 60,142,35;
 Vehicle; 220,20,60;
+Human; 20,140,160;
+Water; 20,20,150;

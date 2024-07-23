@@ -13,24 +13,24 @@ To use the models, download the files within the `neural_network_models` folder 
 |   |-- resources
 |   |   |-- neural_network_models
 |   |   |   |-- ImageEmbedding_ResNet18_32_512x512.onnx
-|   |   |   |-- Segmentation_ConvNeXt_custom_1024_512.onnx
-|   |   |   |-- Segmentation_ConvNeXt_custom_1024_512.txt
+|   |   |   |-- Segmentation_ConvNeXt-base_Aerial_1024x1024.onnx
+|   |   |   |-- Segmentation_ConvNeXt-base_Aerial_1024x1024.txt
 |   |-- ...
 ```
 
 ## Visual Similarity
-The models for the Visual Similarity plugin follow the naming convention `ImageEmbedding_ARC_SIZE_WIDTHxHEIGHT.onnx` where 
+The models for the Visual Similarity plugin follow the naming convention `ImageEmbedding_ARC_SIZE_HEIGHTxWIDTH.onnx` where 
 - `ARC` is the name of the network architecture, e.g. ResNet18
 - `SIZE` is the dimension of the embedding vector, e.g. 32
 - `WIDTH` and `HEIGHT` are the size of the input
 
 ## Semantic Segmentation
-The models for the Semantic Segmentation plugin follow the naming convention `Segmentation_ARC_DATASET_WIDTH_HEIGHT.onnx` where 
-- `ARC` is the name of the network architecture, e.g. ConvNeXt
-- `DATASET` is the dataset used for training, e.g. Cityscapes
+The models for the Semantic Segmentation plugin follow the naming convention `Segmentation_ARC_DATASET_HEIGHTxWIDTH.onnx` where 
+- `ARC` is the name of the network architecture, e.g. ConvNeXt-base
+- `DATASET` is the dataset used for training, e.g. Cityscapes or Aerial
 - `WIDTH` and `HEIGHT` are the size of the input and output
 
-In addition to the onnx model, the class labels along with a color for visualization need to be provided with the model. This is done using a `.txt` file with the same name as the model: `Segmentation_ARC_DATASET_WIDTH_HEIGHT.onnx`.  In this file, each row represents a class with the label and color being separated by a semicolon. The color is given as comma-separated RGB values in the range [0, 255]: 
+In addition to the onnx model, the class labels along with a color for visualization need to be provided with the model. This is done using a `.txt` file with the same name as the model: `Segmentation_ARC_DATASET_HEIGHTxWIDTH.onnx`.  In this file, each row represents a class with the label and color being separated by a semicolon. The color is given as comma-separated RGB values in the range [0, 255]: 
 ```
 Building; 120,120,120;
 Road; 128,64,128;
