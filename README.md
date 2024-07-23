@@ -38,5 +38,5 @@ Vegetation; 60,142,35;
 Vehicle; 220,20,60;
 ```
 
-## Acknowledgements
-*in progress*
+## Contributors
+Special thanks to [Raoul Saipt](https://github.com/ruelll) for contributing to iVS3D by training the neural network model used for segmentation.
