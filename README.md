@@ -55,5 +55,15 @@ Berton et al. (2023).
 EigenPlaces: Training Viewpoint Robust Models for Visual Place Recognition.
 Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2023(Oktober), 11080-11090.
 
+<a id="3">[3]</a> 
+Qin et al. (2020). 
+U2-Net: Going Deeper with Nested U-Structure for Salient Object Detection
+Pattern Recognition, 107404.
+
+<a id="">[4]</a> 
+Liba et al. (2020). 
+Sky Optimization: Semantically Aware Image Processing of Skies in Low-Light Photography
+Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, 526-527.
+
 ## Contributors
 Special thanks to [Raoul Saipt](https://github.com/ruelll) for contributing to iVS3D by training the neural network model used for segmentation.
