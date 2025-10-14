@@ -12,37 +12,38 @@ To use the models, download the files within the `neural_network_models` folder 
 |   |-- libVisualSimilarity.so
 |   |-- resources
 |   |   |-- neural_network_models
-|   |   |   |-- ImageEmbedding_CosPlace_ResNet18_32_512x512.onnx
-|   |   |   |-- ImageEmbedding_EigenPlace_ResNet18_512_512x512.onnx
-|   |   |   |-- Segmentation_ConvNeXt-base_Aerial_1024x1024.onnx
-|   |   |   |-- Segmentation_ConvNeXt-base_Aerial_1024x1024.txt
+|   |   |   |-- ImageEmbedding_CosPlace_ResNet18_32.onnx
+|   |   |   |-- ImageEmbedding_EigenPlace_ResNet18_512.onnx
+|   |   |   |-- Segmentation_ConvNeXt-base_Aerial.onnx
+|   |   |   |-- Segmentation_ConvNeXt-base_Aerial.json
 |   |-- ...
 ```
 
 ## Deep Visual Similarity
-The models for the Deep Visual Similarity plugin follow the naming convention `ImageEmbedding_NAME_ARC_SIZE_HEIGHTxWIDTH.onnx` where 
-- `NAME` is the name of the method used for embedding (optional)
+The models for the Deep Visual Similarity plugin follow the naming convention `ImageEmbedding_NAME_ARC_SIZE.onnx` where 
+- `NAME` is the name of the method used for embedding
 - `ARC` is the name of the network architecture, e.g. ResNet18
 - `SIZE` is the dimension of the embedding vector, e.g. 32
-- `WIDTH` and `HEIGHT` are the size of the input
 
 These model are currently provided for use with Deep Visual Similarity:
-- `ImageEmbedding_CosPlace_ResNet18_32_512x512.onnx` from [[1]](#1).
-- `ImageEmbedding_EigenPlace_ResNet18_512_512x512.onnx` from [[2]](#2).
+- `ImageEmbedding_CosPlace_ResNet18_32.onnx` from [[1]](#1).
+- `ImageEmbedding_EigenPlace_ResNet18_512.onnx` from [[2]](#2).
 
 ## Semantic Segmentation
-The models for the Semantic Segmentation plugin follow the naming convention `Segmentation_ARC_DATASET_HEIGHTxWIDTH.onnx` where 
+The models for the Semantic Segmentation plugin follow the naming convention `Segmentation_ARC_USECASE.onnx` where 
 - `ARC` is the name of the network architecture, e.g. ConvNeXt-base
-- `DATASET` is the dataset used for training, e.g. Cityscapes or Aerial
-- `WIDTH` and `HEIGHT` are the size of the input and output
+- `USECASE` is a short description of the use case, e.g. Sky Segmentation or Aerial Segmentation
 
-In addition to the onnx model, the class labels along with a color for visualization need to be provided with the model. This is done using a `.txt` file with the same name as the model: `Segmentation_ARC_DATASET_HEIGHTxWIDTH.onnx`.  In this file, each row represents a class with the label and color being separated by a semicolon. The color is given as comma-separated RGB values in the range [0, 255]: 
-```
-Building; 120,120,120;
-Road; 128,64,128;
-Vegetation; 60,142,35;
-Vehicle; 220,20,60;
-```
+In addition to the onnx model, the class labels along with a color for visualization as well as mean and standard deviation for input normalization need to be provided with the model. This is done using a `json` file with the same name as the model: `Segmentation_ARC_USECASE.json`.
+
+For reference, take a look at [Segmentation_Unet_Sky.json](neural_network_models/Segmentation_Unet_Sky.json). 
+> Note that the mean and standard deviation values are are applied to inputs in range $[0, 255]$. The values in the original papers might be given in the range $[0, 1]$ and need to be converted accordingly.
+
+These model are currently provided for use with Semantic Segmentation:
+- `Segmentation_ConvNeXt-base_Aerial.onnx` and
+- `Segmentation_BiseNetV2_Aerial.onnx` from [Raoul Saipt](https://github.com/ruelll)
+- `Segmentation_Unet_Saliency_Map.onnx` from [[3]](#3) 
+- `Segmentation_Unet_Sky.json` from [[4]](#4).
 
 ## References
 <a id="1">[1]</a> 
@@ -60,7 +61,7 @@ Qin et al. (2020).
 U2-Net: Going Deeper with Nested U-Structure for Salient Object Detection
 Pattern Recognition, 107404.
 
-<a id="">[4]</a> 
+<a id="4">[4]</a> 
 Liba et al. (2020). 
 Sky Optimization: Semantically Aware Image Processing of Skies in Low-Light Photography
 Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, 526-527.
