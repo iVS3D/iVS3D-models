@@ -9,6 +9,7 @@
         0.17879294,
         0.18077515
     ],
+    "normalizeTo01": false,
     "classes": [
         {
             "name": "Building",

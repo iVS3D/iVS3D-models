@@ -9,6 +9,8 @@
         57.12,
         57.375
     ],
+    "applyMeanStd": true,
+    "normalizeTo01": false,
     "classes": [
         {
             "name": "Sky p >= 0.99",

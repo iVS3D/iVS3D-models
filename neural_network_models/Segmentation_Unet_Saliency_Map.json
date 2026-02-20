@@ -9,6 +9,8 @@
         57.12,
         57.375
     ],
+    "normalizeTo01": false,
+    "applyMeanStd": true,
     "classes": [
         {
             "name": "Foreground p >= 0.99",
@@ -29,7 +31,7 @@
         {
             "name": "Border 0.90 <= p < 0.95",
             "color": [
-                255,
+                200,
                 0,
                 0
             ]
@@ -37,7 +39,7 @@
         {
             "name": "Border 0.10 <= p < 0.90",
             "color": [
-                255,
+                170,
                 0,
                 0
             ]
@@ -45,7 +47,7 @@
         {
             "name": "Border 0.05 <= p < 0.10",
             "color": [
-                255,
+                130,
                 0,
                 0
             ]
@@ -53,7 +55,7 @@
         {
             "name": "Border 0.01 <= p < 0.05",
             "color": [
-                255,
+                100,
                 0,
                 0
             ]
